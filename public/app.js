@@ -7,6 +7,7 @@ const els = {
   errorBanner: document.getElementById('errorBanner'),
   errorMessage: document.getElementById('errorMessage'),
   retryButton: document.getElementById('retryButton'),
+  totalCount: document.getElementById('totalCount'),
   roleChart: document.getElementById('roleChart'),
   searchInput: document.getElementById('searchInput'),
   roleFilter: document.getElementById('roleFilter'),
@@ -131,6 +132,7 @@ async function loadData(forceRefresh) {
     }
 
     records = payload.records;
+    els.totalCount.textContent = records.length;
     roleColorMap = buildRoleColorMap(records);
     populateRoleFilter(records);
     renderRoleChart(records);
