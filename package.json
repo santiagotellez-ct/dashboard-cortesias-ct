@@ -1,0 +1,17 @@
+{
+  "name": "dashboard-cortesias-ct",
+  "version": "1.0.0",
+  "description": "Dashboard para monitorear cortesías y redenciones del evento",
+  "main": "server.js",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@insforge/sdk": "^1.5.1",
+    "express": "^4.19.0"
+  }
+}
