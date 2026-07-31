@@ -1,6 +1,4 @@
 import { getRecords } from '../lib/idtemporal.js';
-import { getRedemptions } from '../lib/insforge.js';
-import { mergeRedemptionState } from '../lib/merge.js';
 
 export default async (req, res) => {
   if (req.method !== 'GET') {
@@ -10,7 +8,7 @@ export default async (req, res) => {
 
   try {
     const forceRefresh = req.query.refresh === 'true';
-    const [result, redemptions] = await Promise.all([getRecords(forceRefresh), getRedemptions()]);
+    const result = await getRecords(forceRefresh);
 
     res.status(200).json({
       success: true,
@@ -18,7 +16,7 @@ export default async (req, res) => {
       stale: Boolean(result.error),
       error: result.error || null,
       totalRecords: result.records.length,
-      records: mergeRedemptionState(result.records, redemptions)
+      records: result.records
     });
   } catch (error) {
     res.status(502).json({ success: false, message: error.message });

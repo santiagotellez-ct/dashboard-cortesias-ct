@@ -76,12 +76,6 @@ h1 { margin: 0 0 8px; font-size: clamp(1.6rem, 2.6vw, 2.2rem); letter-spacing: -
 .card {
   background: var(--surface); border: 1px solid var(--hairline); border-radius: 12px;
 }
-.stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-bottom: 20px; }
-.stat-card { padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; }
-.stat-card span { color: var(--ink-muted); font-size: 0.85rem; }
-.stat-card strong { font-size: 1.7rem; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
-.stat-card.accent-good strong { color: var(--good); }
-.stat-card.accent-warn strong { color: var(--warn); }
 
 .chart-card { padding: 20px; margin-bottom: 20px; }
 .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 12px; }
@@ -115,33 +109,12 @@ td small { color: var(--ink-muted); }
   display: inline-block; padding: 4px 9px; border-radius: 6px; font-size: 0.78rem; font-weight: 600;
   background: var(--surface-2); color: var(--ink-secondary); border: 1px solid var(--border); white-space: nowrap;
 }
-.badge { display: inline-block; padding: 5px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; }
-.badge.redeemed { background: rgba(12,163,12,0.16); color: var(--good); }
-.badge.pending { background: rgba(250,178,25,0.14); color: var(--warn); }
-
-.action-btn { border: 0; cursor: pointer; border-radius: 999px; padding: 8px 14px; font-weight: 600; font-size: 0.82rem; }
-.action-btn.mark { background: rgba(12,163,12,0.16); color: var(--good); }
-.action-btn.unmark { background: var(--surface-2); color: var(--ink-secondary); border: 1px solid var(--border); }
-
-.row-actions { display: flex; gap: 6px; justify-content: flex-end; }
-.icon-btn {
-  border: 1px solid var(--border); background: var(--surface-2); color: var(--ink-muted);
-  border-radius: 6px; width: 30px; height: 30px; cursor: pointer; font-size: 0.85rem;
-}
-.icon-btn:hover { color: var(--ink); }
-
-.detail-row td { background: var(--surface-2); padding: 14px 16px; }
-.detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px 20px; }
-.detail-item span { display: block; color: var(--ink-muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 2px; }
-.detail-item strong { font-size: 0.88rem; font-weight: 500; word-break: break-word; }
 
 .empty { color: var(--ink-muted); padding: 28px 0; text-align: center; }
 
 @media (max-width: 900px) {
-  .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .role-row { grid-template-columns: 110px 1fr 48px; }
 }
 @media (max-width: 600px) {
-  .stats-grid { grid-template-columns: 1fr; }
   #searchInput { width: 100%; }
 }

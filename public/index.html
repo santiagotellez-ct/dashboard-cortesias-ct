@@ -11,8 +11,8 @@
       <header class="hero">
         <div>
           <p class="eyebrow">Colombia Tech Week</p>
-          <h1>Cortesías y redenciones</h1>
-          <p class="subtitle">Registros del evento en vivo. Marca cada cortesía como redimida cuando la persona ingresa.</p>
+          <h1>Cortesías redimidas</h1>
+          <p class="subtitle">Listado en vivo de cortesías ya redimidas en el evento.</p>
         </div>
         <div class="hero-status">
           <span id="statusBadge" class="status-badge">Cargando…</span>
@@ -25,25 +25,6 @@
         <button id="retryButton" class="ghost-btn" type="button">Reintentar</button>
       </div>
 
-      <section class="stats-grid">
-        <article class="card stat-card">
-          <span>Total registros</span>
-          <strong id="totalCount">–</strong>
-        </article>
-        <article class="card stat-card accent-good">
-          <span>Redimidas</span>
-          <strong id="redeemedCount">–</strong>
-        </article>
-        <article class="card stat-card accent-warn">
-          <span>Pendientes</span>
-          <strong id="pendingCount">–</strong>
-        </article>
-        <article class="card stat-card">
-          <span>% redimido</span>
-          <strong id="achievementRate">–</strong>
-        </article>
-      </section>
-
       <section class="card chart-card">
         <div class="card-header">
           <h2>Distribución por rol</h2>
@@ -53,16 +34,11 @@
 
       <section class="card table-card">
         <div class="card-header controls">
-          <h2>Listado de asistentes</h2>
+          <h2>Cortesías redimidas</h2>
           <div class="control-group">
             <input id="searchInput" type="search" placeholder="Buscar por nombre, empresa, correo o cédula" />
             <select id="roleFilter">
               <option value="">Todos los roles</option>
-            </select>
-            <select id="statusFilter">
-              <option value="">Todos los estados</option>
-              <option value="redeemed">Redimidas</option>
-              <option value="pending">Pendientes</option>
             </select>
             <button id="exportButton" class="ghost-btn" type="button">Exportar CSV</button>
           </div>
@@ -77,8 +53,6 @@
                 <th>Empresa / Cargo</th>
                 <th>Ubicación</th>
                 <th>Correo</th>
-                <th>Estado</th>
-                <th></th>
               </tr>
             </thead>
             <tbody id="tableBody"></tbody>
